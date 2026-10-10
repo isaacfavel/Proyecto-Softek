@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* ==========================================================
+   VARIABLES (tema oscuro por defecto)
+   ========================================================== */
+:root {
+    --accent: #00E676;
+    --metric-color: #00E676;
+    --card-bg: #1A1A2E;
+    --card-border: #2D2D44;
+    --tab-bg: #1E1E2E;
+    --tab-bg-active: #2D2D44;
+    --tab-border: #333333;
+}
+
+/* Tipografía */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* 1. Ocultar menú y pie de página para que parezca una app nativa */
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { visibility: hidden; }
+
+/* Menos espacio vacío arriba */
+.block-container {
+    padding-top: 2rem !important;
+}
+
+/* 2. Métricas como tarjetas */
+div[data-testid="stMetric"] {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+div[data-testid="stMetricValue"] {
+    font-size: 2.2rem !important;
+    color: var(--metric-color) !important;
+    font-weight: 800 !important;
+}
+
+/* 3. Pestañas (Tabs) estilo botones modernos */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px 8px 0 0;
+    padding: 10px 20px;
+    background-color: var(--tab-bg);
+    border: 1px solid var(--tab-border);
+    border-bottom: none;
+}
+.stTabs [aria-selected="true"] {
+    background-color: var(--tab-bg-active);
+    border-top: 3px solid var(--accent);
+}
+/* Subrayado de la pestaña activa (reemplaza el rojo por defecto) */
+.stTabs [data-baseweb="tab-highlight"] {
+    background-color: var(--accent) !important;
+}
+
+/* 4. Cuadros de información con borde de acento */
+div[data-testid="stAlert"] {
+    background: var(--card-bg) !important;
+    border-left: 4px solid var(--accent) !important;
+    border-radius: 8px !important;
+}
+
+/* 5. Botón de predicción (gradiente moderno) */
+div.stButton > button:first-child {
+    background: linear-gradient(90deg, #6A1B9A 0%, #8E24AA 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+div.stButton > button:first-child,
+div.stButton > button:first-child * {
+    color: #FFFFFF !important;
+}
+div.stButton > button:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(142, 36, 170, 0.5);
+    border: none;
+}
