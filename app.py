@@ -6,7 +6,7 @@ from groq import Groq
 
 # NUEVO: Importamos nuestro módulo de Machine Learning
 import pronostico as pr
-
+#Hola
 # 1. Ícono y diseño ancho
 st.set_page_config(page_title="Tienda Inteligente", page_icon="🏪", layout="wide")
 # Cargar diseño personalizado CSS
